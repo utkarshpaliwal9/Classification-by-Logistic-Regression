@@ -14,6 +14,13 @@ dataset = pd.read_csv('Social_Network_Ads.csv')
 x = dataset.iloc[:,2:len(dataset.iloc[0,])-1].values
 y = dataset.iloc[:,len(dataset.iloc[0,])-1].values
 
+'''from sklearn.preprocessing import LabelEncoder, OneHotEncoder
+labelencoder = LabelEncoder()
+x[:, 0] = labelencoder.fit_transform(x[:, 0])
+onehotencoder = OneHotEncoder(categorical_features = [0])
+x = onehotencoder.fit_transform(x).toarray()
+x = x[:, 1:len(dataset.iloc[0,])]'''
+
 #FeatureScaling
 from sklearn.preprocessing import StandardScaler
 SC = StandardScaler()
